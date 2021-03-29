@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\BlogPost;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
 class BlogPostFactory extends Factory
 {
     /**
