@@ -102,7 +102,7 @@ class CategoryController extends BaseController
         if (empty($item)) {                         //помилка, якщо репозиторій не знайде наш ід
             abort(404);
         }
-        $categoryList = $this->blogCategoryRepository->getForComboBox();
+        $categoryList = $this->blogCategoryRepository->getForComboBox($item->parent_id);
 
         return view('blog.admin.categories.edit', compact('item', 'categoryList'));
     }
@@ -118,7 +118,7 @@ class CategoryController extends BaseController
     public function update(BlogCategoryUpdateRequest $request, $id)
     {
         //dd(__METHOD__);
-        $item = BlogCategory::$this->blogCategoryRepository->getEdit($id);
+        $item = $this->blogCategoryRepository->getEdit($id);
         if (empty($item)) { //якщо ід не знайдено
             return back() //redirect back
             ->withErrors(['msg' => "Запис id=[{$id}] не знайдено"]) //видати помилку
