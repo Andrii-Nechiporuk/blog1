@@ -9,6 +9,7 @@ class BlogPost extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    const UNKNOWN_USER = 1;
     protected $fillable
         = [
             'title',
