@@ -9,7 +9,8 @@ use App\Repositories\BlogCategoryRepository;
 use App\Http\Requests\BlogPostUpdateRequest;
 
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;use App\Jobs\BlogPostAfterCreateJob;
+use Illuminate\Http\Request;
+use App\Jobs\BlogPostAfterCreateJob;
 use App\Jobs\BlogPostAfterDeleteJob;
 class PostController extends BaseController
 {

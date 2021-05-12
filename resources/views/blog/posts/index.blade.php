@@ -5,7 +5,7 @@
         @foreach ($items as $item)
             <tr>
                 <td>{{$item->id}}</td>
-                <td>{{$item->title}}</td>
+                <td><a href="{{ route('blog.posts.show', $item->id) }}">{{ $item->title }}</a></td>
                 <td>{{$item->created_at}}</td>
             </tr>
         @endforeach
